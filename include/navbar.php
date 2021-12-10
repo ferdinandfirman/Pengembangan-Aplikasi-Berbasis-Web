@@ -12,7 +12,7 @@
 		    <div class="collapse navbar-collapse" id="navbarNav">
         		<ul class="navbar-nav ml-auto" style="font-size: 20px">
           			<li class="nav-item" style="margin-right: 5px">
-            			<a class="nav-link js-scroll-trigger active" href="file:///C:/Users/Ferdinand/Desktop/Semester 9/PABW/Tugas Sesi 5/dashboard.html">DASHBOARD</a>
+            			<a class="nav-link js-scroll-trigger" href="file:///C:/Users/Ferdinand/Desktop/Semester 9/PABW/Tugas Sesi 5/dashboard.html">DASHBOARD</a>
 			        </li>
         			<li class="nav-item scrollto" style="margin: 0px 5px">
             			<a class="nav-link js-scroll-trigger" href="file:///C:/Users/Ferdinand/Desktop/Semester 9/PABW/Tugas Sesi 5/sejarah.html">SEJARAH</a>
