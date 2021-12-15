@@ -12,20 +12,20 @@
 		    <div class="collapse navbar-collapse" id="navbarNav">
         		<ul class="navbar-nav ml-auto" style="font-size: 20px">
           			<li class="nav-item" style="margin-right: 5px">
-            			<a class="nav-link js-scroll-trigger" href="file:///C:/Users/Ferdinand/Desktop/Semester 9/PABW/Tugas Sesi 5/dashboard.html">DASHBOARD</a>
+            			<a class="nav-link js-scroll-trigger" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/dashboard.php">DASHBOARD</a>
 			        </li>
         			<li class="nav-item scrollto" style="margin: 0px 5px">
-            			<a class="nav-link js-scroll-trigger" href="file:///C:/Users/Ferdinand/Desktop/Semester 9/PABW/Tugas Sesi 5/sejarah.html">SEJARAH</a>
+            			<a class="nav-link js-scroll-trigger" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/sejarah.php">SEJARAH</a>
           			</li>
           			<li class="nav-item" style="margin: 0px 5px">
-            			<a class="nav-link js-scroll-trigger" href="file:///C:/Users/Ferdinand/Desktop/Semester 9/PABW/Tugas Sesi 5/warta.html">WARTA JEMAAT</a>
+            			<a class="nav-link js-scroll-trigger" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/warta.php">WARTA JEMAAT</a>
           			</li>
 
 			        <li class="nav-item" style="margin-left: 5px">
-			            <a class="nav-link js-scroll-trigger" href="file:///C:/Users/Ferdinand/Desktop/Semester 9/PABW/Tugas Sesi 5/jadwal.html">JADWAL PERIBADAHAN</a>
+			            <a class="nav-link js-scroll-trigger" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/jadwal.php">JADWAL PERIBADAHAN</a>
 			        </li>
 			        <li class="nav-item" style="margin-left: 5px">
-			            <a class="nav-link js-scroll-trigger" href="file:///C:/Users/Ferdinand/Desktop/Semester 9/PABW/Tugas Sesi 5/admin/login_admin.html">ADMIN</a>
+			            <a class="nav-link js-scroll-trigger" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/admin/login_admin.php">ADMIN</a>
 			        </li>
 			    </ul>
     		</div>
