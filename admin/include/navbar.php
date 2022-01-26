@@ -11,6 +11,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto" style="font-size: 20px">
+              <li class="nav-item" style="margin-right: 25px">
+                  <a class="nav-link disabled" href=""><b>ADMIN</b></a>
+              </li>
               <li class="nav-item" style="margin-right: 5px">
                   <a class="nav-link js-scroll-trigger" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/admin/dashboard.php">DASHBOARD</a>
               </li>

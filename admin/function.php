@@ -25,6 +25,16 @@
 //     return $rows;
 // }
 
+function query($query) {
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while ( $row = mysqli_fetch_assoc($result)){
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
 function registrasi($data) {
     global $conn;
 
@@ -61,4 +71,38 @@ function registrasi($data) {
 
     return mysqli_affected_rows($conn);
 
+}
+
+
+function tambah_warta($data) {
+    global $conn;
+        $judul_warta = htmlspecialchars($data["judul_warta"]);
+        $isi_warta = htmlspecialchars($data["isi_warta"]);
+        // $tgl_pembuatan = "SELECT CURTIME()";
+
+        $query = "INSERT INTO warta VALUES ('', '$judul_warta', '$isi_warta', '', '')";
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+}
+
+function hapus_warta($id_warta) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM warta WHERE id_warta = $id_warta ");
+
+    return mysqli_affected_rows($conn);
+}
+
+function ubah_warta($data) {
+    global $conn;
+        $id_warta = $data["id_warta"];
+        $judul_warta = htmlspecialchars($data["judul_warta"]);
+        $isi_warta = htmlspecialchars($data["isi_warta"]);
+        // $tgl_pembuatan = "SELECT CURTIME()";
+
+        $query = "UPDATE warta SET judul_warta = '$judul_warta', isi_warta = '$isi_warta' WHERE id_warta = $id_warta" ;
+        
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
 }
