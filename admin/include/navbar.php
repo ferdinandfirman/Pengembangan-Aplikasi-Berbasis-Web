@@ -26,6 +26,9 @@
               <li class="nav-item" style="margin-left: 5px">
                   <a class="nav-link js-scroll-trigger" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/admin/jadwal.php">JADWAL PERIBADAHAN</a>
               </li>
+              <li class="nav-item" style="margin-left: 5px">
+                  <a class="nav-link js-scroll-trigger" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/admin/logout_admin.php">LOGOUT</a>
+              </li>
           </ul>
         </div>
       </div>

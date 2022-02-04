@@ -1,4 +1,10 @@
 <?php
+    session_start();
+
+    if(isset($_SESSION["login_admin"])) {
+        header("Location: dashboard.php");
+        exit;
+    }
 	require 'include/header.php';
     require 'function.php';
 
@@ -15,6 +21,8 @@
             //cek password
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row["password"])) {
+                $_SESSION["login_admin"] = true;
+
                 header("Location: dashboard.php");
                 exit;
             }

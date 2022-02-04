@@ -1,4 +1,11 @@
 <?php
+  session_start();
+
+  if( !isset($_SESSION["login_admin"])){
+    header("Location: login_admin.php");
+    exit;
+  }
+  
 	require 'include/header.php';
 	require 'include/navbar.php';
 ?>

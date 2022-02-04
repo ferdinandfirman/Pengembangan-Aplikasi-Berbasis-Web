@@ -1,5 +1,12 @@
 <?php
-	require 'include/header.php';
+  session_start();
+
+  if( !isset($_SESSION["login_admin"])){
+    header("Location: login_admin.php");
+    exit;
+  }
+	
+  require 'include/header.php';
 	require 'include/navbar.php';
 ?>
 
@@ -36,7 +43,7 @@
                     Berisi sejarah berdirinya Gereja Kristen Indonesia (GKI) Penginjil Kota Sukabumi
                   </p>
                 </center>
-                <center><a class="btn btn-success btn-lg font-weight-bold" href="#" role="button">EDIT</a></center>
+                <center><a class="btn btn-success btn-lg font-weight-bold" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/admin/sejarah.php" role="button">EDIT</a></center>
                 <br>
             </div>
         </div>
@@ -50,7 +57,7 @@
                     <br>informasi pernikahan dari anggota jemaat gereja, kabar dukacita, dan lain sebagainya
                   </p>
                 </center>
-                <center><a class="btn btn-success btn-lg font-weight-bold" href="#" role="button">EDIT</a></center>
+                <center><a class="btn btn-success btn-lg font-weight-bold" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/admin/warta.php" role="button">EDIT</a></center>
                 <br>
             </div>
         </div>
@@ -64,7 +71,7 @@
                     <br>Komisi Wanita, Komisi Pria, Komisi Usia Indah, Persekutuan Doa, dan Kebaktian Minggu
                   </p>
                 </center>
-                <center><a class="btn btn-success btn-lg font-weight-bold" href="#" role="button">EDIT</a></center>
+                <center><a class="btn btn-success btn-lg font-weight-bold" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/admin/jadwal.php" role="button">EDIT</a></center>
                 <br>
             </div>
         </div>
