@@ -1,12 +1,24 @@
 <?php
     session_start();
+    require 'include/header.php';
+    require 'function.php';
+
+    if(isset($_COOKIE['id']) && isset($_COOKIE['key']) ){
+        $id = $_COOKIE['id'];
+        $key = $_COOKIE['key'];
+
+        $result = mysqli_query($conn, "SELECT username FROM admin WHERE id_admin = $id");
+        $row = mysqli_fetch_assoc($result);
+         
+        if ($key === hash('sha256', $row['username'])){
+            $_SESSION['login_admin'] = true;
+        }
+    }
 
     if(isset($_SESSION["login_admin"])) {
         header("Location: dashboard.php");
         exit;
     }
-	require 'include/header.php';
-    require 'function.php';
 
     if (isset ($_POST ["login"] ) ) {
 
@@ -22,6 +34,12 @@
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row["password"])) {
                 $_SESSION["login_admin"] = true;
+
+                if(isset($_POST['remember_me']) ){
+
+                    setcookie('id', $row['id_admin'], time() + 60);
+                    setcookie('key', hash('sha256', $row['username']), time() + 60);
+                }
 
                 header("Location: dashboard.php");
                 exit;
@@ -65,6 +83,14 @@
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password">
                             </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <input id="remember_me" type="checkbox" class="form-control text-md-right offset-md-7" name="remember_me" 
+                            style="width:18px">
+                            <div class="col-md-4">
+                                <label for="remember_me" class="col-form-label">remember me</label>
+                            </div>  
                         </div>
 
                         <br>
