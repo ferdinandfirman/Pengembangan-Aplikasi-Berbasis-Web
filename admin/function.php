@@ -78,12 +78,67 @@ function tambah_warta($data) {
     global $conn;
         $judul_warta = htmlspecialchars($data["judul_warta"]);
         $isi_warta = htmlspecialchars($data["isi_warta"]);
+
+        //upload
+        $gambar_warta = upload();
+        if(!$gambar_warta) {
+            return false;
+        }
+        
         // $tgl_pembuatan = "SELECT CURTIME()";
 
-        $query = "INSERT INTO warta VALUES ('', '$judul_warta', '$isi_warta', '', '')";
+        $query = "INSERT INTO warta VALUES ('', '$judul_warta', '$isi_warta', '', '$gambar_warta')";
         mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
+}
+
+function upload() {
+    $namaFile = $_FILES['gambar_warta']['name'];
+    $ukuranFile = $_FILES['gambar_warta']['size'];
+    $error = $_FILES['gambar_warta']['error'];
+    $tmpName = $_FILES['gambar_warta']['tmp_name'];
+
+    //cek jika gambar tidak diupload
+    if( $error === 4 ) {
+        echo "<script>
+                alert('pilih gambar terlebih dahulu untuk diupload!');
+              </script>";
+        return false;
+    }
+
+    //cek apakah gambar yg diupload
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $x = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($x));
+    if( !in_array($ekstensiGambar, $ekstensiGambarValid) ) {
+        echo "<script>
+                alert('yang anda upload bukan gambar!');
+              </script>";
+        return false;
+    }
+
+    //cek jika ukurannya terlalu besar
+    if($ukuranFile > 3000000){
+        echo "<script>
+                alert('ukuran gambar terlalu besar!');
+              </script>";
+        return false;
+    }
+
+    //lolos pengecekan, gambar siap diupload
+    //generate nama gambar baru
+    // $namaFileBaru = uniqid();
+    // $nameFileBaru .= '.';
+    // $namaFileBaru .= $ekstensiGambar;
+
+    $namaFileBaru = uniqid() . '.' . $ekstensiGambar;
+
+    // var_dump($namaFileBaru);die;
+    
+    move_uploaded_file($tmpName, 'img/warta/'.$namaFileBaru);
+
+    return $namaFileBaru;
 }
 
 function hapus_warta($id_warta) {
@@ -99,8 +154,16 @@ function ubah_warta($data) {
         $judul_warta = htmlspecialchars($data["judul_warta"]);
         $isi_warta = htmlspecialchars($data["isi_warta"]);
         // $tgl_pembuatan = "SELECT CURTIME()";
+        $gambar_warta_lama = htmlspecialchars($data["gambar_warta_lama"]);
 
-        $query = "UPDATE warta SET judul_warta = '$judul_warta', isi_warta = '$isi_warta' WHERE id_warta = $id_warta" ;
+        //cek apakah user pilih gambar baru atau tidak
+        if( $_FILES['gambar_warta']['error'] === 4 ) {
+            $gambar_warta = $gambar_warta_lama;
+        } else {
+            $gambar_warta = upload();
+        }
+
+        $query = "UPDATE warta SET judul_warta = '$judul_warta', isi_warta = '$isi_warta', gambar_warta = '$gambar_warta' WHERE id_warta = $id_warta" ;
         
         mysqli_query($conn, $query);
 

@@ -47,5 +47,10 @@
       color: white;
     }
 
+    @media print {
+      .btn {
+        display: none;
+      }
+    }
   </style>
 </head>

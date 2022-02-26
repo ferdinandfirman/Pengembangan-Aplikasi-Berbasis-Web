@@ -14,16 +14,16 @@ if( !isset($_SESSION["login_admin"])){
   rsort($warta);
 ?>
 
-  <a class="btn btn-success btn-lg font-weight-bold ml-auto" href="tambah_warta.php" role="button" style="height: 45px; font-size:18px;">TAMBAH WARTA</a>
+  <a class="btn btn-success btn-lg font-weight-bold ml-auto" href="tambah_warta.php" role="button" style="height: 45px; font-size:18px; margin:10px 0px">TAMBAH WARTA</a>
   <?php $i = 1; ?>
   <?php foreach ($warta as $row):?>
   <div class ="card">
     <div class="card-body">
       <div class="row">
-        <div class="col-md-2">
-          <img style="width:250px" src="" alt="gambar poster">
-        </div>
-        <div class="col-md-10">
+        <div class="col-md-3">
+          <img style="width:300px; vertical-alignment:center" src="img/warta/<?= $row["gambar_warta"];?>" alt="gambar poster">
+        </div><br>
+        <div class="col-md-9">
           <h3 style="text-transform:uppercase;"><b><?= $row["judul_warta"]; ?></b></h3>
           <p><?= $row["isi_warta"]; ?> 
             <br><br> Diposting pada <?= $row["tgl_pembuatan"]; ?>

@@ -31,8 +31,9 @@
 ?>
 
     <h2 style="text-align:center"><b>UBAH WARTA</b></h2>
-        <form method="POST" action="" style="margin:0px 20px">
+        <form method="POST" action="" enctype="multipart/form-data" style="margin:0px 20px">
             <input type="hidden" name="id_warta" value="<?= $warta["id_warta"]; ?>">
+            <input type="hidden" name="gambar_warta_lama" value="<?= $warta["gambar_warta"]; ?>">
             <div class="form-group" style="font-size:22px">
                 <label for="judul_warta" class="col-form-label text-md-right font-weight-bold">JUDUL WARTA</label>
                 <input id="judul_warta" type="text" class="form-control" value="<?=$warta["judul_warta"];?>"
@@ -44,7 +45,16 @@
                 <textarea id="isi_warta" style="font-size:20px" type="text" class="form-control" 
                 name="isi_warta" rows="5" required><?=$warta["isi_warta"];?></textarea>
             </div>
+
+            <div class="form-group" style="font-size:22px">
+                <label for="gambar_warta" class="col-form-label text-md-right font-weight-bold">UPLOAD GAMBAR</label>
+                <br><img style="width:250px" src="img/<?= $warta["gambar_warta"];?>" alt="belum ada gambar poster">
+                <input id="gambar_warta" style="font-size:20px; margin-top:10px" type="file" class="form-control" 
+                name="gambar_warta"></input>
+            </div>
+
             <br>
+            
             <div class="form-group" style="text-align: right;">
                 <button type="submit" class="btn btn-primary font-weight-bold" name="submit" style="height:50px; width:280px; font-size:22px">
                     UBAH WARTA
