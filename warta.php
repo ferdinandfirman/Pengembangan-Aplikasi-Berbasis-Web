@@ -12,10 +12,10 @@
   <div class ="card">
     <div class="card-body">
       <div class="row">
-        <div class="col-md-2">
-          <img style="width:250px" src="" alt="gambar poster">
-        </div>
-        <div class="col-md-10">
+        <div class="col-md-3">
+          <img style="width:300px; vertical-alignment:center" src="admin/img/warta/<?= $row["gambar_warta"];?>" alt="gambar poster">
+        </div><br>
+        <div class="col-md-9">
           <h3 style="text-transform:uppercase;"><b><?= $row["judul_warta"]; ?></b></h3>
           <p><?= $row["isi_warta"]; ?> 
             <br><br> Diposting pada <?= $row["tgl_pembuatan"]; ?>
