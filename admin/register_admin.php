@@ -53,8 +53,11 @@
                         </div>
 
                         <br>
-                        <div class="form-group row mb-0" style="text-align: right;margin-right: 110px">
-                            <div class="col-md-8 offset-md-4">
+                        <div class="form-group row mb-0" style="text-align: right">
+                            <div class="col-md-10">
+                                <a class="btn btn-secondary" style="width:55pt; margin-right: 20px" href="http://localhost/Pengembangan-Aplikasi-Berbasis-Web/dashboard.php">
+                                    BACK
+                                </a>
                                 <button type="submit" class="btn btn-success" name="register">
                                    REGISTER
                                 </button>
