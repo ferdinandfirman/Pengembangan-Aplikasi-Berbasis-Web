@@ -33,5 +33,6 @@
 
   <br><br>
 
-</body>
-</html> 
+<?php
+  require 'include/footer.php';
+?>
